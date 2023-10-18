@@ -48,8 +48,9 @@ const Banner = () => {
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
                         <span className="tagline">Welcome to my Portfolio</span>
-                        <h1>{"Hi I'm webdecoded"}<span className="wrap">web developer</span></h1>
-                        <p>I'm currently a MS in CS student at University of Missouri - St. Louis</p>
+                        <h1>{"Alina Nguyen "}</h1>
+                        <h2><span className="wrap">{text}</span></h2>
+                        <p>I'm currently a gradute student in  MSCS at University of Missouri - St. Louis</p>
                         <button onClick={() => console.log('connect')}>Let's connect</button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
