@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
-import './skills.css'
+import './Skills.css'
 import { Row, Col } from "react-bootstrap";
 import meter1 from "../../assets/img/meter1.svg";
 import meter2 from "../../assets/img/meter2.svg";
