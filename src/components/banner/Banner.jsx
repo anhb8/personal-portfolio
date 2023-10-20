@@ -1,4 +1,4 @@
-import './banner.css';
+import './Banner.css';
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -15,10 +15,10 @@ const Banner = () => {
     useEffect(() => {
         let ticker = setInterval(() => {
         tick()
-        },delta)
+        },delta);
 
         return () => { clearInterval(ticker)};
-    }, [text])
+    }, [text]);
 
     const tick = () => {
         let i = loopNum % toRotate.length;
@@ -28,7 +28,7 @@ const Banner = () => {
         setText(updatedText);
 
         if (isDeleting) {
-            setDelta(prevDelta => prevDelta /2)
+            setDelta(prevDelta => prevDelta /2);
         }
 
         if (!isDeleting && updatedText === fullText) {
@@ -51,7 +51,7 @@ const Banner = () => {
                         <h1>{"Alina Nguyen "}</h1>
                         <h2><span className="wrap">{text}</span></h2>
                         <p>I'm currently a gradute student in  MSCS at University of Missouri - St. Louis</p>
-                        <button onClick={() => console.log('connect')}>Let's connect</button>
+                        <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25}/></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
                         <img src={headerImg} alt="Header Image" />
