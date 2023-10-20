@@ -7,11 +7,10 @@ import NavBar from './components/navbar/NavBar';
 import About from './components/about/About';
 import Skills from './components/skills/Skills';
 import Experience from './components/experience/Experience';
-import Portfolio from './components/portfolio/Portfolio';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 import Banner from './components/banner/Banner';
-
+import Education from './components/education/Education';
 const App = () => {
     return (
         <div className="App">
@@ -21,7 +20,7 @@ const App = () => {
             <About />
             <Experience />
             <Skills />
-            <Portfolio />
+            <Education />
             <Contact />
             <Footer />
 
