@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import headerImg from '../../assets/img/header-img.svg';
+import 'animate.css';
+import TrackVisibility from 'react-on-screen';
 
 const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+    const toRotate = ["Driven by the vision of making a difference through software that redefines possibilities"];
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 2000;
@@ -47,11 +49,15 @@ const Banner = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
-                        <span className="tagline">Welcome to my Portfolio</span>
-                        <h1>{"Alina Nguyen "}</h1>
-                        <h2><span className="wrap">{text}</span></h2>
-                        <p>I'm currently a gradute student in  MSCS at University of Missouri - St. Louis</p>
-                        <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25}/></button>
+                        <TrackVisibility> 
+                        {({ isVisible }) => 
+                        <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                            <span className="tagline">Welcome to my Portfolio</span>
+                            <h1>{"Alina Nguyen "}</h1>
+                            <p><span className="wrap">{text}</span></p>
+                            <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25}/></button>
+                        </div>}
+                        </TrackVisibility>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
                         <img src={headerImg} alt="Header Image" />
