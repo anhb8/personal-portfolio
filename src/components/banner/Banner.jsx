@@ -1,10 +1,10 @@
-import './Banner.css';
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import headerImg from '../../assets/img/header-img.svg';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import './Banner.css';
 
 const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
@@ -47,20 +47,21 @@ const Banner = () => {
     return (
         <section className="banner" id="home"> 
             <Container>
-                <Row className="align-items-center">
+                <Row className="justify-content-center d-flex">
                     <Col xs={12} md={6} xl={7}>
+                    <div className="centered-container">
                         <TrackVisibility> 
                         {({ isVisible }) => 
-                        <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                            <span className="tagline">Welcome to my Portfolio</span>
-                            <h1>{"Alina Nguyen "}</h1>
-                            <p><span className="wrap">{text}</span></p>
-                            <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25}/></button>
+                        
+                            <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                                <span className="tagline">Welcome to my Portfolio</span>
+                                <h1>{"Alina Nguyen "}</h1>
+                                <p><span className="wrap">{text}</span></p>
+                                <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25}/></button>
+                           
                         </div>}
                         </TrackVisibility>
-                    </Col>
-                    <Col xs={12} md={6} xl={5}>
-                        <img src={headerImg} alt="Header Image" />
+                        </div>
                     </Col>
                 </Row>
             </Container>
