@@ -1,19 +1,30 @@
 import React from "react";
 import './about.css'
-import { Nav, Tab, TabContainer, Row, Col, Container  } from "react-bootstrap";
 import 'animate.css';
+import ME from '../../assets/img/alina-photo.jpeg';
 
 const About = () => {
     return (
-        <section className="project" id="project">
-            <Container>
-                <Row>
-                    <Col>
-                        <h2>About Me</h2>
-                        <p>I'm Alina Nguyen, a Computer Science graduate student specializing in Artificial Intelligence, set to graduate in May 2024. I'm passionate about AI, a problem-solving enthusiast, and a dedicated learner.</p>
-                    </Col>
-                </Row>
-            </Container>
+        <section className="about" id="about">
+            <h2>About Me</h2>
+                <div className="container about__container">
+                    <div className="about__me">
+                        <div className="about__me-image">
+                            <img src={ME} alt="About image" />
+                        </div>
+                    </div>
+
+                    <div className="about__content">
+                        <p>
+                            My name is Alina Nguyen. I am pursuing my Masters in Computer Science specializing in Artificial Intelligence at the University of Missouri - St. Louis. My journey involves tackling challenges, continuous learning, and crafting practical solutions. Expected to graduate in May 2024, I bring a fresh perspective and a passion for applied computer science. I'm eager to collaborate on impactful projects and contribute my skills to drive success.
+                        </p>
+                        <span className="tagline">
+                            <a href="https://drive.google.com/file/d/11Wo2lWmwmEb9Lu9XoENsM9akJzswo2R5/view?usp=sharing" target="_blank" className='resume-btn'> Resume</a>
+                        </span>
+
+                    </div>
+                </div>
+            
         </section>    
     )
 }

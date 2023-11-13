@@ -12,7 +12,7 @@ const Banner = () => {
     const toRotate = ["Driven by the vision of making a difference through software that redefines possibilities"];
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
-    const period = 2000;
+    const period = 800;
 
     useEffect(() => {
         let ticker = setInterval(() => {
