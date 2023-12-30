@@ -8,7 +8,6 @@ import About from './components/about/About';
 import Skills from './components/skills/Skills';
 import Experience from './components/experience/Experience';
 import Contact from './components/contact/Contact';
-import Footer from './components/footer/Footer';
 import Banner from './components/banner/Banner';
 
 const App = () => {
@@ -21,7 +20,6 @@ const App = () => {
             <Skills />
             <Projects />
             <Contact />
-            <Footer />
         </div>
     )
 }

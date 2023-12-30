@@ -123,10 +123,10 @@
     letter-spacing: 0.8px;
   }
   .background-image-right {
-    top: 20%;
+    top: 30%;
     position: absolute;
     bottom: 0;
-    width: 35%;
+    max-width: 25% !important;
     right: 0;
     z-index: -4;
   }

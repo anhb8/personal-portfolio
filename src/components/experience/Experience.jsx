@@ -165,35 +165,6 @@ const Experience = () => {
                                     </div>
                                 </div>
                             </Tab.Pane>
-                            {/* <Tab.Pane eventKey="first">
-                                <Row>
-                                    {
-                                        experience.map((experience,index) => {
-                                            return (
-                                                <ExperienceCard
-                                                key={index}
-                                                {...experience}
-                                                />
-                                            )
-                                        })
-                                    }
-                                </Row>
-                            </Tab.Pane>
-                            <Tab.Pane eventKey="second">
-                            <Row>
-                                    {
-                                        experience.map((experience,index) => {
-                                            return (
-                                                <ExperienceCard
-                                                key={index}
-                                                {...experience}
-                                                />
-                                            )
-                                        })
-                                    }
-                                </Row>
-                            </Tab.Pane>
-                            <Tab.Pane eventKey="third"></Tab.Pane> */}
                         </Tab.Content>
                         </Tab.Container>
                     </Col>
@@ -201,8 +172,7 @@ const Experience = () => {
             </Container>
             <img className="background-image-right" src={colorSharp2}/>
         </section>
-
-        // </div>
+        
     )
 }
 
