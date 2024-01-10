@@ -46,8 +46,9 @@
   margin-top: 50px;
   margin: 2rem 0 2.6 rem;
   color: var(--color-light);
-  font-size: 18px;
+  font-size: 19.5px;
   margin-bottom: 50px;
+  line-height: 1.5;
 }
  
 .resume-btn {

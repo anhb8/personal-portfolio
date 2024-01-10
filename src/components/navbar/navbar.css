@@ -8,18 +8,18 @@ nav.navbar {
   }
   nav.navbar.scrolled {
     padding: 0px 0;
-    background-color: #121212;
+    background-color: #110909;
   }
   nav.navbar a.navbar-brand {
       width: 9%;
   }
   nav.navbar .navbar-nav .nav-link.navbar-link {
-    font-weight: 400;
+    font-weight: 500;
     color: #fff !important;
     letter-spacing: 0.8px;
-    padding: 0 25px;
+    padding: 0 15px;
     font-size: 18px;
-    opacity: 0.75;
+    opacity: 0.8;
   }
   nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
   nav.navbar .navbar-nav a.nav-link.navbar-link.active {
@@ -73,9 +73,9 @@ nav.navbar {
     padding: 18px 34px;
     font-size: 18px;
     margin-left: 18px;
-      position: relative;
-      background-color: transparent;
-      transition: 0.3s ease-in-out;
+    position: relative;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
   }
   .navbar-text button span {
     z-index: 1;

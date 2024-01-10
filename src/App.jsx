@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './App.css';
 import logo from './assets/img/logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,6 +11,11 @@ import Contact from './components/contact/Contact';
 import Banner from './components/banner/Banner';
 
 const App = () => {
+    useEffect(() => {
+        fetch("/api")
+        .then((res) => res.json)
+    }, [])
+
     return (
         <div className="App">
             <NavBar />
@@ -21,7 +26,7 @@ const App = () => {
             <Projects />
             <Contact />
         </div>
-    )
-}
+    );
+};
 
 export default App;

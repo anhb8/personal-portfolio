@@ -2,11 +2,18 @@ import React from "react";
 import './about.css'
 import 'animate.css';
 import ME from '../../assets/img/alina-photo.jpeg';
+import TrackVisibility from "react-on-screen";
 
 const About = () => {
     return (
         <section className="about" id="about">
-            <h2>About Me</h2>
+            <TrackVisibility> 
+                        {({ isVisible }) => 
+                        <div className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                            <h2>About Me</h2>
+                        </div>}
+                    </TrackVisibility>
+                
                 <div className="container about__container">
                     <div className="about__me">
                         <div className="about__me-image">

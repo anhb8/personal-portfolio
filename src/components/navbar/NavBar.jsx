@@ -59,6 +59,17 @@ const NavBar = () => {
         setInterval(rotateLogo, 3000); // Rotate every 3 seconds (3000 milliseconds)
     });
 
+        const scrollToConnect = () => {
+            const connectElement = document.getElementById('connect');
+    
+            if (connectElement) {
+                window.scrollTo({
+                    top: connectElement.offsetTop,
+                    behavior: 'smooth',
+                });
+            }
+        }
+
     return (
         <Navbar expand="lg" className={scrolled ? "scrolled": ""}>
             <Container>
@@ -85,9 +96,9 @@ const NavBar = () => {
                     <div className="social-icon">
                         <a href="https://www.linkedin.com/in/alina-nguyen-ngoc" target="_blank"><img src={navIcon1} alt="LinkedIn" /></a>
                         <a href="https://github.com/anhb8" target="_blank"><img src={navIcon2} alt="GitHub" /></a>
-                        <a href="#"><img src={navIcon3} alt="" /></a>
+                        {/* <a href="#"><img src={navIcon3} alt="" /></a> */}
                     </div>
-                    <button className="vvd" onClick={() => console.log('connect')}><span>Let's connect</span></button>
+                    <button className="vvd" onClick={scrollToConnect}><span>Let's connect</span></button>
                 </span>
                 </Navbar.Collapse>
             </Container>

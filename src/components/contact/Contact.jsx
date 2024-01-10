@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import contactImg from "../../assets/img/contact-img.svg";
 import './Contact.css';
+import TrackVisibility from "react-on-screen";
 
 const Contact = () => {
     const formInitialDetails = {
@@ -24,9 +25,10 @@ const Contact = () => {
     };
 
     const handleSubmit = async (e) => {
+        console.log(formDetails);
         e.preventDefault();
         setButtonText("Sending...");
-        let response = await fetch("http://localhost:5000/contact", {
+        let response = await fetch("/api/contact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json;charset=utf-8",
@@ -46,6 +48,7 @@ const Contact = () => {
     return (
         <section className="contact" id="connect">
             <Container>
+            <TrackVisibility> 
                 <Row className="align-items-center">
                     <Col md={6}>
                         <img src={contactImg} alt="Contact Us" />
@@ -66,20 +69,21 @@ const Contact = () => {
                             <Col sm={6} className="px-1">
                                 <input type="tel" value={formDetails.phone} placeholder="Phone Number" onChange={(e) => onFormUpdate('phone', e.target.value)} />
                             </Col>
-                            <Col>
+                            <Col size={12} className="px-1">
                                 <textarea row="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                                <button type="submit"><span>{buttonText}</span></button>
+                                <button style={{marginBottom: '10px'}} type="submit"><span>{buttonText}</span></button>
                             </Col>
-                            {
+                        </Row>
+                        {
                                 status.message && 
                                 <Col>
                                     <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
                                 </Col>
                             }
-                        </Row>
                     </form>
                     </Col>
                 </Row>
+                </TrackVisibility> 
             </Container>
         </section>
     )

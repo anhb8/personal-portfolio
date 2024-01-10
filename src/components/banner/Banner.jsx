@@ -43,6 +43,17 @@ const Banner = () => {
 
         }
     }
+    
+    const scrollToConnect = () => {
+        const connectElement = document.getElementById('connect');
+
+        if (connectElement) {
+            window.scrollTo({
+                top: connectElement.offsetTop,
+                behavior: 'smooth',
+            });
+        }
+    }
 
     return (
         <section className="banner" id="home"> 
@@ -57,7 +68,7 @@ const Banner = () => {
                                 <span className="tagline">Welcome to my Portfolio</span>
                                 <h1>{"Alina Nguyen "}</h1>
                                 <p><span className="wrap">{text}</span></p>
-                                <button onClick={() => console.log('connect')}>Let's connect <ArrowRightCircle size={25}/></button>
+                                <button onClick={scrollToConnect}>Let's connect <ArrowRightCircle size={25}/></button>
                            
                         </div>}
                         </TrackVisibility>

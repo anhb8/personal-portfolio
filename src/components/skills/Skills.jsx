@@ -6,6 +6,8 @@ import meter1 from "../../assets/img/meter1.svg";
 import meter2 from "../../assets/img/meter2.svg";
 import meter3 from "../../assets/img/meter3.svg";
 import colorSharp from "../../assets/img/color-sharp.png";
+import TrackVisibility from "react-on-screen";
+import { useInView } from 'react-intersection-observer';
 
 const Skills = () => {
     const responsive = {
@@ -27,55 +29,57 @@ const Skills = () => {
         }
       };
 
+    const skills = [
+        { name: 'Python', percentage: 90, className: 'python' },
+        { name: 'JavaScript', percentage: 80, className: 'javascript' },
+        { name: 'C/C++', percentage: 80, className: 'c' },
+        { name: 'Java', percentage: 80, className: 'java' },
+        { name: 'React', percentage: 80, className: 'react' },
+        { name: 'HTML/CSS', percentage: 80, className: 'css' },
+        { name: 'Data Structures', percentage: 80, className: 'ds' },
+        { name: 'Flask', percentage: 80, className: 'flask' },
+
+      ];
+      
+      const [ref, inView] = useInView({
+        threshold: 0.5,
+      });
+
     return (
         <section className="skill" id="skills">
             <div className="container">
                 <Row>
-                    <Col>
-                        <div className="skill-bx">
-                            <h2>
-                                Skills
-                            </h2>
+                  <Col>
+                    <TrackVisibility> 
+                        {({ isVisible }) => 
+                        <div className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                          <div className="skill-header">
+                            <h2>Skills</h2> 
                             <p>Technical Skills</p>
-                            
-                            <Carousel responsive={responsive} infinite={true} className="skill-slider">
-                                <div className="item">
-                                    <img src={meter1} alt="Image"></img>
-                                    <h5>Python</h5>
-                                </div>
-                                <div className="item">
-                                    <img src={meter2} alt="Image"></img>
-                                    <h5>C++</h5>
-                                </div>
-                                <div className="item">
-                                    <img src={meter3} alt="Image"></img>
-                                    <h5>C</h5>
-                                </div>  
-                                <div className="item">
-                                    <img src={meter3} alt="Image"></img>
-                                    <h5>Java</h5>
-                                </div> 
-                                <div className="item">
-                                    <img src={meter3} alt="Image"></img>
-                                    <h5>React</h5>
-                                </div> 
-                                <div className="item">
-                                    <img src={meter3} alt="Image"></img>
-                                    <h5>JavaScript</h5>
-                                </div> 
-                                <div className="item">
-                                    <img src={meter3} alt="Image"></img>
-                                    <h5>CSS</h5>
-                                </div> 
-                                
-                            </Carousel>
+                          </div>
+                        </div>}
+                    </TrackVisibility>
+                    <div className="skill-main">
+                      {skills.map((skill, index) => (
+                        <div ref={ref} className={`skill-bar ${inView ? 'animated' : ''}`} key={index}>
+                          <div className="info">
+                            <p>{skill.name}</p>
+                            {/* <p>{`${skill.percentage}%`}</p> */}
+                          </div>
+                          <div className="bar">
+                            <span className={skill.className}></span>
+                          </div>
                         </div>
-                    </Col>
+                      ))}
+                    </div>
+                    <img className="background-image-left" src={colorSharp}/>
+                    
+                  </Col>
                 </Row>
-            </div>
-            <img className="background-image-left" src={colorSharp}/>
+          </div>
         </section>
-    )     
+    );
+    
 }
 
 export default Skills;
